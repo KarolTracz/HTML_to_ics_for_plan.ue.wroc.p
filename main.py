@@ -72,7 +72,7 @@ def create_ics(data):
                     f"SUMMARY:{item}",
                     "END:VEVENT"
                 ]
-                start_time = end_time + timedelta(minutes=15)
+                start_time = end_time
             i += 1
 
     ics_content.append("END:VCALENDAR")
@@ -80,6 +80,7 @@ def create_ics(data):
     ics_file_content = "\n".join(ics_content)
     with open("class_schedule.ics", "w") as file:
         file.write(ics_file_content)
+
 
 if __name__ == '__main__':
     main()
